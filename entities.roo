@@ -1,0 +1,46 @@
+
+# Entities and attributes
+
+entity jpa --class ~.domain.PRODUCTO  --sequenceName PRODUCTO_SEQ
+	field string --fieldName NOMBRE --notNull
+	field string --fieldName TIPO --notNull
+	field number --fieldName PRECIO --type java.lang.Integer --primitive --notNull
+	field number --fieldName CANTIDAD_STOCK --type java.lang.Integer --primitive --notNull
+	
+entity jpa --class ~.domain.BODEGA  --sequenceName BODEGA_SEQ
+	field string --fieldName NOMBRE --notNull
+	field string --fieldName UBICACION --notNull
+	
+entity jpa --class ~.domain.FACTURA  --sequenceName FACTURA_SEQ
+	field other --fieldName PRODUCTO --type PRODUCTO  --notNull
+	field number --fieldName CANTIDAD --type java.lang.Integer --primitive --notNull
+	field number --fieldName PRECIO --type java.lang.Integer --primitive --notNull
+	
+entity jpa --class ~.domain.DISTRIBUCION  --sequenceName DISTRIBUCION_SEQ
+	field string --fieldName FECHA --notNull
+	field other --fieldName DIRECCION --type CLIENTE  --notNull
+	
+entity jpa --class ~.domain.CLIENTE  --sequenceName CLIENTE_SEQ
+	field string --fieldName NOMBRE --notNull
+	field string --fieldName TIPO_IDENTIFICACION --notNull
+	field string --fieldName NUMERO_IDENTIFICACION --notNull
+	field string --fieldName DIRECCION --notNull
+	field string --fieldName TELEFONO --notNull
+	
+entity jpa --class ~.domain.CARRITO  --sequenceName CARRITO_SEQ
+	field other --fieldName PRODUCTO --type PRODUCTO  --notNull
+	field number --fieldName CANTIDAD --type java.lang.Integer --primitive --notNull
+	
+
+
+# Start of user code for entities and atributes
+
+# End of user code
+
+# References (relations between entities)
+
+
+# Start of user code for references
+
+# End of user code for references
+
